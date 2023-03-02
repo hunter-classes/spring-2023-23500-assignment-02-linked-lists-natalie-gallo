@@ -33,5 +33,4 @@ public:
   int length(); // the # of elements
 
   */
-
 };

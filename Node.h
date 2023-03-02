@@ -1,10 +1,10 @@
 #pragma once
 
 class Node{
- private:
+private:
   std::string data;
   Node *next;
- public:
+public:
   Node();
   Node(std::string data);
   Node(std::string data, Node *next);

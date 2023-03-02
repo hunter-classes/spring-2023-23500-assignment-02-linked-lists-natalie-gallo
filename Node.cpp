@@ -9,7 +9,7 @@ Node::Node() : next(nullptr)
 Node::Node(std::string data, Node *next){
   this->data = data;
   this->next = next;
-  
+    
 }
 
 Node::Node(std::string data){

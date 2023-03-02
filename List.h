@@ -14,7 +14,7 @@ public:
     
     std::string toString(); // for testing purposes
     bool contains(std::string item); //new
-    //void remove(int loc);
+    void remove(int loc);
 
   /*
     Try to complete for Monday:

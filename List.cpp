@@ -106,6 +106,32 @@ bool List::contains(std::string item){
     return false;
 }
 
-//void List::remove(int loc){
+void List::remove(int loc){
+    Node *walker, *trailer;
+    walker = this->head; // start of the list
+    trailer = nullptr;   // one behind
 
-//}
+    while (loc > 0 && walker != nullptr){
+        loc = loc - 1;
+
+        /* trailer will always be one node
+           behind walker */
+        trailer = walker;
+        walker = walker->getNext();
+    }
+
+    if (walker == nullptr){ //should there be a case where the user puts in location out of bounds? is this sufficient?
+        std::cout << "out of range \n";
+        return;
+    }
+
+    if (trailer == nullptr){ //if first item in list
+        trailer = walker->getNext();
+        head = trailer;
+        walker = nullptr;
+    } else {
+        // do the regular case
+        trailer->setNext(walker->getNext());
+        walker = nullptr;
+    }
+}

@@ -42,5 +42,7 @@ int main()
     std::cout << "Testing Contain: ";
     std::cout << "Contains \'d\'? " << std::boolalpha << l->contains("d") << "\n";
 
+    //call constructor
+    delete l;
     return 0;
 }

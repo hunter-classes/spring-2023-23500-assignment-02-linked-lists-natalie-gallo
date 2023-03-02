@@ -8,6 +8,7 @@ List::List(){ // constructor - creates a head (start of list) pointer
 }
 
 List::~List(){ //destructor
+    std::cerr << "Calling the destructor\n";
     Node *walker, *trailer;
     walker = this->head;
     trailer = nullptr;
@@ -17,9 +18,6 @@ List::~List(){ //destructor
         walker = walker->getNext();
         delete trailer;
     }
-    
-    trailer = nullptr;
-    head = nullptr;
 }
 
 // insert at the "front" (head)
@@ -132,17 +130,18 @@ void List::remove(int loc){
     }
 
     if (walker == nullptr){ //should there be a case where the user puts in location out of bounds? is this sufficient?
-        std::cout << "out of range \n";
+        std::cout << "out of range \n"; //or a throw like in insert()
         return;
     }
 
     if (trailer == nullptr){ //if first item in list
-        trailer = walker->getNext();
-        head = trailer;
+        head = walker->getNext(); //same as before but removed unnecessary step using trailer pointer
+        delete walker;
         walker = nullptr;
     } else {
         // do the regular case
         trailer->setNext(walker->getNext());
+        delete walker;
         walker = nullptr;
     }
 }

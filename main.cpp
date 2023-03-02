@@ -40,7 +40,7 @@ int main()
     std::cout << l->toString() << " " << l->length() << "\n";
 
     std::cout << "Testing Contain: ";
-    std::cout << "Contains \'d\'? " << std::boolalpha << l->contains("d") << "\n\n";
+    std::cout << "Contains \'d\'? " << std::boolalpha << l->contains("d") << "\n";
 
     return 0;
 }

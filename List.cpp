@@ -7,9 +7,20 @@ List::List(){ // constructor - creates a head (start of list) pointer
     head = nullptr;
 }
 
-/*List::~List(){ //destructor
+List::~List(){ //destructor
+    Node *walker, *trailer;
+    walker = this->head;
+    trailer = nullptr;
 
-}*/
+    while(walker!=nullptr){
+        trailer = walker;
+        walker = walker->getNext();
+        delete trailer;
+    }
+    
+    trailer = nullptr;
+    head = nullptr;
+}
 
 // insert at the "front" (head)
 void List::insert(std::string data){

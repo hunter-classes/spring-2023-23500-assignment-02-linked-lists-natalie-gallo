@@ -7,13 +7,13 @@ private:
     Node *head;
 public:
     List();
-    ~List(); //destructor new
+    ~List(); //destructor
     void insert(std::string data); //at the front
     void insert(int loc, std::string data); //0 indexed
     int length();
     
     std::string toString(); // for testing purposes
-    bool contains(std::string item); //new
+    bool contains(std::string item);
     void remove(int loc);
 
   /*

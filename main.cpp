@@ -1,8 +1,11 @@
 #include <iostream>
 #include "List.h"
+#include "OList.h"
 
 int main()
 {
+    //PART 1
+    std::cout << "----------PART I-----------\n\n";
     List *l = new List();
     std::cout << l->toString() << " " << l->length() << "\n";
     std::cout << "Testing Contain: ";
@@ -44,5 +47,34 @@ int main()
 
     //call constructor
     delete l;
+
+
+    //PART 2
+    std::cout << "----------PART II-----------\n\n";
+    OList *l2 = new OList();
+    std::cout << l2->toString() << " " << l2->length() << "\n";
+    l2->insert("2");
+    std::cout << l2->toString() << " " << l2->length() << "\n";
+    l2->insert("1");
+    std::cout << l2->toString() << " " << l2->length() << "\n";
+    l2->insert("3");
+    std::cout << l2->toString() << " " << l2->length() << "\n";
+    l2->insert("5");
+    std::cout << l2->toString() << " " << l2->length() << "\n";
+    l2->insert("4");
+    std::cout << l2->toString() << " " << l2->length() << "\n";
+
+    std::cout << "At location 2: " << l2->get(2) << std::endl; //3
+    std::cout << "Contains \'3\'? " << std::boolalpha << l2->contains("3") << "\n"; //Testing Contain
+    std::cout << "\nTesting Remove: \n\n";
+    l2->remove(6); //out of range
+    l2->remove(2); //should remove 3 at loc 2
+    std::cout << l2->toString() << " " << l2->length() << "\n";
+    std::cout << "\nTesting Reverse: \n\n";
+    l2->reverse();
+    std::cout << l2->toString() << " " << l2->length() << "\n";
+    
+    delete l2;
+
     return 0;
 }
